@@ -1,0 +1,49 @@
+add_namespace = la_crisis_polaca
+
+#El imperio britanico nos envia un ultimatum
+country_event = {
+	id = la_crisis_polaca.1
+	title = la_crisis_polaca.1.t
+	desc = la_crisis_polaca.1.d
+
+	picture = el_imperio_britanico_nos_envia_un_ultimatum-501
+	fire_only_once = yes
+        is_triggered_only = yes
+	trigger = {
+
+
+	}
+}
+
+#la historia que conmovió alemanes
+news_event = {
+	id = la_crisis_polaca.2
+	title = la_crisis_polaca.2.t
+	desc = la_crisis_polaca.2.d
+
+	picture = la_historia_que_conmovi_alemanes-452
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		focus_progress = {
+    focus = un_pacto_con_satan??
+    progress > 0.5
+}
+
+
+
+	}
+	mean_time_to_happen = { days = 1 }
+	timeout_days = 7
+	option = {
+		name = la_crisis_polaca.2.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}
