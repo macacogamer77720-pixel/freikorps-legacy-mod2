@@ -1,0 +1,130 @@
+﻿add_namespace = events_for_focus_tree
+
+#Qué hacer con la población?
+country_event = {
+	id = events_for_focus_tree.1
+	title = events_for_focus_tree.1.t
+	desc = events_for_focus_tree.1.d
+
+	picture = qu_hacer_con_la_poblacin-487
+	fire_only_once = yes
+	trigger = {
+		has_completed_focus = Qué_hacer_con_la_población?
+
+
+	}
+	mean_time_to_happen = { days = 1 }
+	timeout_days = 8
+	option = {
+		name = events_for_focus_tree.1.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		create_unit = {
+
+division = "name = \"[Low_freikorps]\" division_template = \"[Low_Freikorps_units]\" start_experience_factor = [0;1] start_equipment_factor = [0;1]"
+
+owner = [Ger]
+
+}
+
+
+		hidden_effect = {
+			
+		}
+	}
+}
+#un pequeño acercamiento?
+country_event = {
+	id = events_for_focus_tree.2
+	title = events_for_focus_tree.2.t
+	desc = events_for_focus_tree.2.d
+
+	picture = qu_hacer_con_la_poblacin-487
+	fire_only_once = yes
+	trigger = {
+		has_completed_focus = Qué_hacer_con_la_población?
+
+
+	}
+	mean_time_to_happen = { days = 1 }
+	timeout_days = 8
+	option = {
+		name = events_for_focus_tree.2.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+
+
+		hidden_effect = {
+			
+		}
+	}
+}
+#but they reform
+country_event = {
+	id = events_for_focus_tree.3
+	title = events_for_focus_tree.3.t
+	desc = events_for_focus_tree.3.d
+
+	picture = qu_hacer_con_la_poblacin-487
+	fire_only_once = yes
+	trigger = {
+		has_completed_focus = Qué_hacer_con_la_población?
+
+
+	}
+	mean_time_to_happen = { days = 1 }
+	timeout_days = 8
+	option = {
+		name = events_for_focus_tree.3.a
+		add_ideas = reformed_freikorps
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+
+
+
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = events_for_focus_tree.3.b
+		add_ideas = reformed_freikorps2
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+country_event = {
+    id = events_for_focus_tree.4
+    title = events_for_focus_tree.4.t
+    desc = events_for_focus_tree.4.d
+
+       immediate = {
+
+        GER = {
+
+            retire_character = wolfgang_kapp_wolfgang_kapp
+
+            set_country_leader = {
+          name = "Erich Ludendorff"
+          ideology = neutrality
+     }
+   }
+
+        }
+    }
+
+    option = {
+        name = OK
+    }

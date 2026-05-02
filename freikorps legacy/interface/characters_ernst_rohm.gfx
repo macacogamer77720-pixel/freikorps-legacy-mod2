@@ -1,0 +1,10 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_ernst_rohm_ernst_rohm_large"
+		texturefile = "gfx/characters/ernst_rohm/ernst_rohm_ernst_rohm_large.dds"
+	}
+	spriteType = {
+		name = "GFX_ernst_rohm_ernst_rohm_small"
+		texturefile = "gfx/characters/ernst_rohm/ernst_rohm_ernst_rohm_small.dds"
+	}
+}

@@ -1,0 +1,118 @@
+add_namespace = conflictos_fronterizos_de_polonia
+
+#nuestras tropas arrazan
+country_event = {
+	id = conflictos_fronterizos_de_polonia.1
+	title = conflictos_fronterizos_de_polonia.1.t
+	desc = conflictos_fronterizos_de_polonia.1.d
+
+	picture = nuestras_tropas_arrazan-1
+        fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		has_decision = ofensiva_fronteriza_en_gdyna
+
+
+	}
+	option = {
+		name = conflictos_fronterizos_de_polonia.1.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		GER = {
+ transfer_state = 807
+}
+
+
+
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#nuestras tropas arrazan
+country_event = {
+	id = conflictos_fronterizos_de_polonia.2
+	title = conflictos_fronterizos_de_polonia.2.t
+	desc = conflictos_fronterizos_de_polonia.2.d
+
+	picture = vQFXETfp-1
+        fire_only_once = yes
+	is_triggered_only = yes
+        trigger = {
+		has_decision = ofensiva_fronteriza_en_posen
+
+
+	}
+	option = {
+		name = conflictos_fronterizos_de_polonia.2.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+GER = {
+ transfer_state = 85
+}
+
+
+
+
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#nuestras tropas arrazan
+country_event = {
+	id = conflictos_fronterizos_de_polonia.3
+	title = conflictos_fronterizos_de_polonia.3.t
+	desc = conflictos_fronterizos_de_polonia.3.d
+
+	picture = jCwnGgyT-1
+        fire_only_once = yes
+	is_triggered_only = yes
+        trigger = {
+		has_decision = ofensiva_fronteriza_en_danzing
+
+
+	}
+	option = {
+		name = conflictos_fronterizos_de_polonia.3.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		GER = {
+ transfer_state = 86
+}
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#nuestras tropas fracasan....
+country_event = {
+	id = conflictos_fronterizos_de_polonia.4
+	title = conflictos_fronterizos_de_polonia.4.t
+	desc = conflictos_fronterizos_de_polonia.4.d
+
+	picture = nuestras_tropas_fracasan-1
+        fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = conflictos_fronterizos_de_polonia.4.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}

@@ -1,0 +1,72 @@
+characters = {
+	#wolfgang kapp
+	wolfgang_kapp_wolfgang_kapp = {
+		name = wolfgang_kapp_wolfgang_kapp
+		portraits = {
+			civilian = {
+				large = GFX_wolfgang_kapp_wolfgang_kapp_large
+			}
+		}
+		country_leader = {
+			ideology = orthodox_reactionism
+			traits = { War_Industrialist }
+			expire = ""
+		}
+	}
+	#alfred hugenberg
+	wolfgang_kapp_alfred_hugenberg = {
+		name = wolfgang_kapp_alfred_hugenberg
+		portraits = {
+			civilian = {
+				large = GFX_wolfgang_kapp_alfred_hugenberg_large
+			}
+		}
+		country_leader = {
+			ideology = conservatism
+			traits = { media_personality economist }
+			expire = ""
+		}
+	}
+	#Lundendorf
+	wolfgang_kapp_lundendorf = {
+		name = wolfgang_kapp_lundendorf
+		portraits = {
+			civilian = {
+				large = GFX_wolfgang_kapp_lundendorf_large
+			}
+	    }
+    country_leader = {
+			ideology = disident_reactionism
+			traits = { media_personality War_Industrialist }
+			expire = ""
+		}
+	}
+	#Kaiser Wilhiem III
+	wolfgang_kapp_kaiser_wilhiem_iii = {
+		name = wolfgang_kapp_kaiser_wilhiem_iii
+		portraits = {
+			civilian = {
+				large = GFX_wolfgang_kapp_kaiser_wilhiem_iii_large
+			}
+		}
+		country_leader = {
+			ideology = reaccionarismo_ortodoxo_
+			traits = { old_guard conservative_nationalist  inexperienced_monarch }
+			expire = ""
+		}
+	}
+	#Ernst Rohm
+	wolfgang_kapp_ernst_rohm = {
+		name = wolfgang_kapp_ernst_rohm
+		portraits = {
+			civilian = {
+				large = GFX_wolfgang_kapp_ernst_rohm_large
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			traits = { harsh_leader brilliant_strategist inspirational_leader organizer }
+			expire = ""
+		}
+	}
+}
