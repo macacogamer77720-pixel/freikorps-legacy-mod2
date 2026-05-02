@@ -1,0 +1,354 @@
+ideas = {
+	country = {
+
+		kaiser_wilhiem_ii = {
+			picture = kaiser_wilhiem_ii-817115
+			allowed = {
+				tag = GER
+
+
+			}
+			targeted_modifier = {
+				stability_factor = 0.05
+
+
+			}
+		}
+
+		overmobilized_industry = {
+			picture = overmobilized_industry-1416
+			allowed = {
+				tag = GER
+			}
+			modifier = {
+				stability_factor = -0.10
+
+consumer_goods_factor = 0.10
+
+production_speed_buildings_factor = -0.1 
+
+democratic_drift = 0.03
+
+			}
+		}
+
+		overmobilized_industry2 = {
+			picture = overmobilized_industry-1416
+			allowed = {
+				tag = GER
+			}
+			modifier = {
+				stability_factor = -0.10
+
+consumer_goods_factor = 0.10
+
+production_speed_buildings_factor = -0.1 
+
+democratic_drift = 0.03
+
+			}
+		}
+
+		the_freikorps_question = {
+			picture = the_freikorps_question-1082
+			allowed = {
+				tag = GER
+			}
+			modifier = {
+
+political_power_factor = -0.30
+				
+army_core_attack_factor = 0.10
+
+army_core_defence_factor = 0.10
+
+
+			}
+		}
+
+		the_stillfresh_memory_of_the_great_war = {
+			picture = the_stillfresh_memory_of_the_great_war-2148
+			allowed = {
+				tag = GER
+			}
+			modifier = {
+				army_org_factor = 0.15
+
+training_time_factor = 0.05
+
+recruitable_population_factor = -0.05
+
+experience_gain_army_factor = -0.15
+
+
+
+
+			}
+		}
+
+		almost_no_international_support = {
+			picture = almost_no_international_support-2039
+			allowed = {
+				tag = GER
+			}
+			modifier = {
+				
+political_power_factor = -0.15
+
+trade_opinion_factor = -0.025
+
+opinion_gain_monthly = -5
+
+
+			}
+		}
+		almost_no_international_support2 = {
+			picture = almost_no_international_support-2039
+			allowed = {
+				tag = GER
+			}
+			modifier = {
+				
+political_power_factor = -0.10
+
+trade_opinion_factor = -0.015
+
+opinion_gain_monthly = -5
+
+
+			}
+		}
+
+		memoirs_of_1929 = {
+			picture = memoirs_of_1929-1132
+			allowed = {
+				tag = GER
+			}
+			modifier = {
+				stability_factor = -0.10
+war_support_factor = -0.20
+
+research_time_factor = 0.05
+
+democratic_drift = 0.03
+
+
+
+			}
+		}
+		overcoming_memories_of_'29 = {
+			picture = memoirs_of_1929-1132
+			allowed = {
+				tag = GER
+			}
+			modifier = {
+				stability_factor = -0.05
+war_support_factor = -0.10
+
+research_time_factor = 0.05
+
+democratic_drift = 0.01
+
+
+
+			}
+		}
+		soft_totalitarianism = {
+			picture = memoirs_of_1929-1132
+			allowed = {
+				tag = GER
+			}
+			modifier = {
+				stability_factor = 0.10
+
+war_support_factor = 0.10
+
+conscription_factor = 0.15
+
+
+			}
+		}
+		
+		restructuring_the_state = {
+			picture = almost_no_international_support-2039
+			allowed = {
+				tag = GER
+			}
+			modifier = {
+				
+political_power_factor = 0.15
+
+stability_weekly = 0.01
+
+
+
+			}
+		}
+		purging = {
+			picture = almost_no_international_support-2039
+			allowed = {
+				tag = GER
+			}
+			modifier = {
+				
+political_power_factor = 0.15
+
+war_support_factor = 0.10
+
+stability_factor = -0.10
+
+communism_drift = -0.03
+
+Fascism_drift = -0.03
+
+Democratic_drift = -0.03
+
+
+
+			}
+		}
+			
+		domesticated_war_dogs = {
+			picture = almost_no_international_support-2039
+			allowed = {
+				tag = GER
+			}
+			modifier = {
+				
+army_infantry_attack_factor = 0.05
+
+land_reinforce_rate = 0.15
+
+army_defence_factor = -0.1
+
+			}
+	   }
+
+	   prohibited_public_demonstrations = {
+			picture = almost_no_international_support-2039
+			allowed = {
+				tag = GER
+			}
+			modifier = {
+				
+political_power_gain = 0.15
+
+stability_factor = -0.10
+
+required_garrison_factor = 0.1
+
+resistance_activity = 0.1
+
+			}
+	   }
+	   
+	   untouchable_freikorps = {
+			picture = almost_no_international_support-2039
+			allowed = {
+				tag = GER
+			}
+			modifier = {
+				
+political_power_factor = -0.30
+				
+army_core_attack_factor = 0.10
+
+army_core_defence_factor = 0.10
+
+conscription_factor = 0.15
+
+stability_factor = 0.10
+
+no_compliance_gain = 3.5
+
+			}
+	   }
+	   on_the_path_to_ending_dissent  = {
+			picture = almost_no_international_support-2039
+			allowed = {
+				tag = GER
+			}
+			modifier = {
+				
+war_support_factor = 0.05
+
+intelligence_agency_defense = 0.2
+
+			}
+	   }
+	   decision_making_centralized  = {
+			picture = almost_no_international_support-2039
+			allowed = {
+				tag = GER
+			}
+			modifier = {
+				
+political_power_factor = 0.15
+
+stability_factor = 0.15
+
+research_speed_factor = -0.2
+			}
+		}
+
+	   reformed_freikorps = {
+			picture = almost_no_international_support-2039
+			allowed = {
+				tag = GER
+			}
+			modifier = {
+				
+army_core_attack_factor = 0.10
+
+army_core_defence_factor = 0.10
+
+conscription_factor = 0.10
+
+stability_factor = 0.20
+
+offence = -0.10
+
+production_factory_efficiency_gain_factor = 0.25 
+
+			}
+	   }
+
+	   reformed_freikorps2 = {
+			picture = almost_no_international_support-2039
+			allowed = {
+				tag = GER
+			}
+			modifier = {
+				
+political_power_factor = -0.15
+				
+army_core_attack_factor = 0.15
+
+army_core_defence_factor = 0.15
+
+conscription_factor = 0.20
+
+stability_factor = -0.10
+
+no_compliance_gain = 15
+
+offence = 0.15
+
+			}
+	   }
+	   
+	   Freikorps_incorporate_into_the_state = {
+			picture = almost_no_international_support-2039
+			allowed = {
+				tag = GER
+			}
+			modifier = {
+				
+army_org = 15
+
+
+
+			}
+	   }
+	}
+}

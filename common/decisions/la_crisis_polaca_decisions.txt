@@ -1,0 +1,1131 @@
+la_crisis_polaca = {
+
+ trabajando_a_contra_reloj = {
+    remove_effect = { }
+    days_mission_timeout = 50
+    is_good = no
+
+    selectable_mission = no        
+    fire_only_once = yes
+
+    available = {
+        country_exists = POL        
+    }
+
+    timeout_effect = {
+        country_event = la_crisis_polaca.1
+    }
+	complete_effect = {
+            country_event = 
+        }
+}
+
+    estirando_las_negociasiones = {
+        cost = 60
+        complete_effect = {
+            add_days_mission_timeout = {
+                mission = trabajando_a_contra_reloj
+                days = 30
+            }
+        }
+    }
+
+    enfriar_las_aguas = { }
+
+    ofensiva_fronteriza_en_gdyna = {
+        cost = 50
+        fire_only_once = yes
+        complete_effect = {
+            start_border_war = {
+                change_state_after_war = no
+
+                attacker = {
+                    state = 63
+                    num_provinces = 2
+                    on_win = conflictos_fronterizos_de_polonia.1
+                    on_lose = conflictos_fronterizos_de_polonia.4
+                    on_cancel = conflictos_fronterizos_de_polonia.4
+                }
+
+                defender = {
+                    state = 807
+                    num_provinces = 2
+                    on_win = conflictos_fronterizos_de_polonia.4
+                    on_lose = conflictos_fronterizos_de_polonia.4
+                    on_cancel = conflictos_fronterizos_de_polonia.4
+                }
+            }
+        }
+    }
+
+    ofensiva_fronteriza_en_posen = {
+        cost = 50
+        fire_only_once = yes
+        complete_effect = {
+            start_border_war = {
+                change_state_after_war = no
+                attacker = {
+                    state = 66
+                    num_provinces = 3
+                    on_win = conflictos_fronterizos_de_polonia.3
+                    on_lose = conflictos_fronterizos_de_polonia.4
+                    on_cancel = conflictos_fronterizos_de_polonia.4
+                }
+
+                defender = {
+                    state = 86
+                    num_provinces = 3
+                    on_win = conflictos_fronterizos_de_polonia.4
+                    on_lose = conflictos_fronterizos_de_polonia.4
+                    on_cancel = conflictos_fronterizos_de_polonia.4
+                }
+            }
+        }
+    }
+
+    ofensiva_fronteriza_en_danzing = {
+        cost = 50
+        fire_only_once = yes
+        complete_effect = {
+            start_border_war = {
+                change_state_after_war = no
+
+                attacker = {
+                    state = 5
+                    num_provinces = 4
+                    on_win = conflictos_fronterizos_de_polonia.2
+                    on_lose = conflictos_fronterizos_de_polonia.4
+                    on_cancel = conflictos_fronterizos_de_polonia.4
+                }
+
+                defender = {
+                    state = 85
+                    num_provinces = 4
+                    on_win = conflictos_fronterizos_de_polonia.4
+                    on_lose = conflictos_fronterizos_de_polonia.4
+                    on_cancel = conflictos_fronterizos_de_polonia.4
+                }
+            }
+        }
+    }
+}
+
+########################
+##### GER factions #####
+########################
+
+GER_internal_factions = {
+	GER_click_faction_decision = {
+		fire_only_once = no
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+		visible = {
+			check_variable = { GER.selected_faction = -1 }
+			NOT = { GER_faction_power_struggle_is_over = yes }
+		}
+
+		complete_effect={
+		
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = GER_click_faction_decision_tt
+		}
+	}
+	
+	GER_bolster_faction = {
+		days_remove = 15
+		days_re_enable = 15
+		fire_only_once = no
+		icon = GFX_decision_generic_civil_support
+		
+		ai_will_do = {
+			base = 100
+		}
+
+		available = {
+			OR = {
+				political_power_daily > 0.25
+				has_political_power > 4
+			}
+		}
+		visible = {
+			NOT = { check_variable = { GER.selected_faction = -1 } }
+			NOT = { GER_faction_power_struggle_is_over = yes }
+		}
+		
+		cost = 0
+
+		complete_effect={
+			set_variable = { GER.faction_to_bolster = GER.selected_faction }
+			
+			if={
+				limit = { check_variable = { GER.selected_faction = 1 } }
+				add_to_variable = { GER.player_is_going_for_radek = 1 }
+			}
+		}
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = GER_bolster_faction_tt
+			
+			effect_tooltip = {
+				set_variable = {  
+					var = pop_t
+					value = 10
+					tooltip = CHANGE_FACTION_POPULARITY_TT
+				}
+				set_variable = {  
+					var = str_t
+					value = 10
+					tooltip = CHANGE_FACTION_STRENGTH_TT
+				}
+			}
+			hidden_effect={
+				add_to_variable = { GER.faction_popularity_array^GER.faction_to_bolster = 10 }
+				add_to_variable = { GER.faction_strength_array^GER.faction_to_bolster = 10 }
+				
+				GER_update_internal_factions = yes
+			}
+		}
+	}
+	
+#	GER_discredit_faction = {
+#		days_remove = 15
+#		days_re_enable = 15
+#		fire_only_once = no
+#		icon = GFX_decision_eng_trade_unions_demand
+#
+#		available = {
+#			OR = {
+#				political_power_daily > 0.25
+#				has_political_power > 4
+#			}
+#		}
+#		visible = {
+#			NOT = { check_variable = { GER.selected_faction = 0 } }
+#			NOT = { GER_faction_power_struggle_is_over = yes }
+#		}
+#
+#		cost = 0
+#		
+#		modifier = {
+#			political_power_gain = -0.25
+#		}
+#
+#		complete_effect={
+#			set_variable = { GER.faction_to_discredit = GER.selected_faction }
+#		}
+#
+#		remove_effect = {
+#			custom_effect_tooltip = GER_discredit_faction_tt
+#
+#			meta_effect={
+#				text={
+#					set_variable = {  
+#						var = [STATE_ID].popularity_change_var
+#						value = -5
+#						tooltip = CHANGE_FACTION_POPULARITY_TT
+#					}
+#					set_variable = {  
+#						var = [STATE_ID].strength_change_var
+#						value = -5
+#						tooltip = CHANGE_FACTION_STRENGTH_TT
+#					}
+#					[STATE_ID] = { GER_boost_internal_faction = yes }
+#					
+#				}
+#				STATE_ID = "[?GER.faction_to_discredit]"
+#				debug = yes
+#			}
+#			clear_variable = GER.faction_to_discredit
+#		}
+#	}
+	
+	GER_allow_faction_speech = {
+		days_remove = 15
+		days_re_enable = 15
+		fire_only_once = no
+		icon = GFX_decision_eng_propaganda_campaigns
+
+		available = {
+			OR = {
+				political_power_daily > 0.25
+				has_political_power > 4
+			}
+		}
+		visible = {
+			NOT = { check_variable = { GER.selected_faction = -1 } }
+			NOT = { GER_faction_power_struggle_is_over = yes }
+		}
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		cost = 0
+
+		complete_effect={
+			set_variable = { GER.faction_speech = GER.selected_faction }
+			
+			if={
+				limit = { check_variable = { GER.selected_faction = 1 } }
+				add_to_variable = { GER.player_is_going_for_radek = 1 }
+			}
+		}
+		
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = GER_allow_faction_speech_tt
+
+			effect_tooltip = {
+				set_variable = {  
+					var = pop_t
+					value = 15
+					tooltip = CHANGE_FACTION_POPULARITY_TT
+				}
+				set_variable = {  
+					var = str_t
+					value = 5
+					tooltip = CHANGE_FACTION_STRENGTH_TT
+				}
+			}
+			hidden_effect={
+				add_to_variable = { GER.faction_popularity_array^GER.faction_to_bolster = 15 }
+				add_to_variable = { GER.faction_strength_array^GER.faction_to_bolster = 5 }
+				
+				GER_update_internal_factions = yes
+			}
+		}
+	}
+	
+	GER_appeal_to_german_nationalism = {
+		days_remove = 15
+		days_re_enable = 15
+		fire_only_once = yes
+		icon = GFX_decision_eng_propaganda_campaigns
+
+		available = {
+			OR = {
+				political_power_daily > 0.25
+				has_political_power > 4
+			}
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 100
+				has_country_flag = GER_AI_RANDOM_NATIONAL_BOLSHEVIST
+			}
+		}
+		visible = {
+			check_variable = { GER.selected_faction = 2 }
+			NOT = { GER_faction_power_struggle_is_over = yes }
+		}
+		
+		cost = 0
+
+		complete_effect={
+		}
+		
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = GER_national_bolshevists_change_effects
+			
+			effect_tooltip = {
+				set_variable = {  
+					var = pop_t
+					value = 15
+					tooltip = CHANGE_FACTION_POPULARITY_TT
+				}
+				set_variable = {  
+					var = str_t
+					value = 15
+					tooltip = CHANGE_FACTION_STRENGTH_TT
+				}
+			}
+			hidden_effect={
+				add_to_variable = { GER.faction_popularity_array^2 = 15 }
+				add_to_variable = { GER.faction_strength_array^2 = 15 }
+				
+				GER_update_internal_factions = yes
+			}
+		}
+	}
+#	GER_venerate_the_greate_poets = {
+#		days_remove = 15
+#		days_re_enable = 15
+#		fire_only_once = yes
+#		icon = GFX_decision_eng_trade_unions_support
+#
+#		available = {
+#			OR = {
+#				political_power_daily > 0.25
+#				has_political_power > 4
+#			}
+#		}
+#		visible = {
+#			check_variable = { GER.selected_faction = 3 }
+#			NOT = { GER_faction_power_struggle_is_over = yes }
+#		}
+#		
+#		cost = 0
+#
+#		complete_effect={
+#		}
+#		
+#		modifier = {
+#			political_power_gain = -0.25
+#		}
+#
+#		remove_effect = {
+#			custom_effect_tooltip = GER_national_bolshevists_change_effects
+#			set_variable = {  
+#				var = 3.popularity_change_var
+#				value = 10
+#				tooltip = CHANGE_FACTION_POPULARITY_TT
+#			}
+#			3 = { GER_boost_internal_faction = yes }
+#		}
+#	}
+	GER_expose_thalmanns_failures = {
+		days_remove = 15
+		days_re_enable = 15
+		fire_only_once = yes
+		icon = GFX_decision_generic_speech
+
+		available = {
+			OR = {
+				political_power_daily > 0.25
+				has_political_power > 4
+			}
+		}
+		visible = {
+			NOT = { check_variable = { GER.selected_faction = -1 } }
+			NOT = { check_variable = { GER.selected_faction = 0 } }
+			NOT = { GER_faction_power_struggle_is_over = yes }
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 100
+				NOT = { has_country_flag = GER_AI_RANDOM_STALINIST }
+			}
+		}
+
+		complete_effect={
+		}
+		
+		modifier = {
+			political_power_gain = -0.25
+		}
+		
+		cost = 0
+
+		remove_effect = {
+			custom_effect_tooltip = GER_stalinists_change_effects
+
+			effect_tooltip = {
+				set_variable = {  
+					var = pop_t
+					value = -15
+					tooltip = CHANGE_FACTION_POPULARITY_TT
+				}
+				set_variable = {  
+					var = str_t
+					value = -15
+					tooltip = CHANGE_FACTION_STRENGTH_TT
+				}
+			}
+			hidden_effect={
+				add_to_variable = { GER.faction_popularity_array^0 = -15 }
+				add_to_variable = { GER.faction_strength_array^0 = -15 }
+				
+				GER_update_internal_factions = yes
+			}
+		}
+	}
+#	GER_weaponise_rote_hilfe = {
+#		days_remove = 15
+#		days_re_enable = 15
+#		fire_only_once = yes
+#		icon = GFX_decision_eng_trade_unions_support
+#
+#		available = {
+#			OR = {
+#				political_power_daily > 0.25
+#				has_political_power > 4
+#			}
+#		}
+#		visible = {
+#			check_variable = { GER.selected_faction = 1 }
+#			NOT = { GER_faction_power_struggle_is_over = yes }
+#		}
+#
+#		complete_effect={
+#		}
+#		
+#		modifier = {
+#			political_power_gain = -0.25
+#		}
+#		
+#		cost = 0
+#
+#		remove_effect = {
+#			custom_effect_tooltip = GER_stalinists_change_effects
+#			set_variable = {  
+#				var = 1.popularity_change_var
+#				value = 15
+#				tooltip = CHANGE_FACTION_POPULARITY_TT
+#			}
+#			set_variable = {  
+#				var = 1.strength_change_var
+#				value = 5
+#				tooltip = CHANGE_FACTION_STRENGTH_TT
+#			}
+#			1 = { GER_boost_internal_faction = yes }
+#		}
+#	}
+#	GER_use_the_stasi = {
+#		days_remove = 15
+#		days_re_enable = 15
+#		fire_only_once = yes
+#		icon = GFX_decision_SWI_expand_covert_operations
+#
+#		available = {
+#			OR = {
+#				political_power_daily > 0.25
+#				has_political_power > 4
+#			}
+#		}
+#		visible = {
+#			check_variable = { GER.selected_faction = 1 }
+#			NOT = { GER_faction_power_struggle_is_over = yes }
+#		}
+#
+#		custom_cost_trigger = {
+#			command_power > 24.9
+#		}
+#		custom_cost_text = decision_cost_CP_25
+#		
+#		modifier = {
+#			political_power_gain = -0.25
+#		}
+#
+#		complete_effect={
+#		}
+#
+#		remove_effect = {
+#			custom_effect_tooltip = GER_stalinists_change_effects
+#			set_variable = {  
+#				var = 1.popularity_change_var
+#				value = 5
+#				tooltip = CHANGE_FACTION_POPULARITY_TT
+#			}
+#			set_variable = {  
+#				var = 1.strength_change_var
+#				value = 15
+#				tooltip = CHANGE_FACTION_STRENGTH_TT
+#			}
+#			1 = { GER_boost_internal_faction = yes }
+#		}
+#	}
+	GER_international_connections = {
+		days_remove = 15
+		days_re_enable = 15
+		fire_only_once = yes
+		icon = GFX_decision_generic_political_discourse
+
+		available = {
+			OR = {
+				political_power_daily > 0.25
+				has_political_power > 4
+			}
+		}
+		visible = {
+			check_variable = { GER.selected_faction = 1 }
+			NOT = { GER_faction_power_struggle_is_over = yes }
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 100
+				has_country_flag = GER_AI_RANDOM_ORTHODOX_COMMUNIST
+			}
+		}
+		
+		cost = 0
+		
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+		complete_effect={
+			add_to_variable = { GER.player_is_going_for_radek = 1 }
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = GER_orthodox_communists_change_effects
+
+			effect_tooltip = {
+				set_variable = {  
+					var = pop_t
+					value = 15
+					tooltip = CHANGE_FACTION_POPULARITY_TT
+				}
+				set_variable = {  
+					var = str_t
+					value = 15
+					tooltip = CHANGE_FACTION_STRENGTH_TT
+				}
+			}
+			hidden_effect={
+				add_to_variable = { GER.faction_popularity_array^1 = 15 }
+				add_to_variable = { GER.faction_strength_array^1 = 15 }
+				
+				GER_update_internal_factions = yes
+			}
+		}
+	}
+#	GER_kinder_kuche_kirche = {
+#		days_remove = 15
+#		days_re_enable = 15
+#		fire_only_once = yes
+#		icon = GFX_decision_generic_civil_support
+#
+#		available = {
+#			OR = {
+#				political_power_daily > 0.25
+#				has_political_power > 4
+#			}
+#		}
+#		visible = {
+#			OR = { check_variable = { GER.selected_faction = 3 } check_variable = { GER.selected_faction = 4 } }
+#			NOT = { GER_faction_power_struggle_is_over = yes }
+#		}
+#
+#		complete_effect={
+#		}
+#		
+#		modifier = {
+#			political_power_gain = -0.25
+#		}
+#		
+#		cost = 0
+#
+#		remove_effect = {
+#			custom_effect_tooltip = GER_national_bolshevists_change_effects
+#			set_variable = {  
+#				var = 3.popularity_change_var
+#				value = 10
+#				tooltip = CHANGE_FACTION_POPULARITY_TT
+#			}
+#			set_variable = {  
+#				var = 3.strength_change_var
+#				value = 10
+#				tooltip = CHANGE_FACTION_STRENGTH_TT
+#			}
+#			3 = { GER_boost_internal_faction = yes }
+#			custom_effect_tooltip = GER_strasserists_change_effects
+#			set_variable = {  
+#				var = 4.popularity_change_var
+#				value = 10
+#				tooltip = CHANGE_FACTION_POPULARITY_TT
+#			}
+#			set_variable = {  
+#				var = 4.strength_change_var
+#				value = 10
+#				tooltip = CHANGE_FACTION_STRENGTH_TT
+#			}
+#			4 = { GER_boost_internal_faction = yes }
+#		}
+#	}
+	GER_contacts_in_moscow = {
+		days_remove = 15
+		days_re_enable = 15
+		fire_only_once = yes
+		icon = GFX_decision_SOV_the_centre
+
+		available = {
+			OR = {
+				political_power_daily > 0.25
+				has_political_power > 4
+			}
+		}
+		visible = {
+			check_variable = { GER.selected_faction = 0 }
+			NOT = { GER_faction_power_struggle_is_over = yes }
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 100
+				has_country_flag = GER_AI_RANDOM_STALINIST
+			}
+		}
+
+		complete_effect={
+		}
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+		
+		cost = 0
+
+		remove_effect = {
+			custom_effect_tooltip = GER_stalinists_change_effects
+
+			effect_tooltip = {
+				set_variable = {  
+					var = pop_t
+					value = 20
+					tooltip = CHANGE_FACTION_POPULARITY_TT
+				}
+				set_variable = {  
+					var = str_t
+					value = 20
+					tooltip = CHANGE_FACTION_STRENGTH_TT
+				}
+			}
+			hidden_effect={
+				add_to_variable = { GER.faction_popularity_array^0 = 20 }
+				add_to_variable = { GER.faction_strength_array^0 = 20 }
+				
+				GER_update_internal_factions = yes
+			}
+		}
+	}
+	GER_appeal_to_the_agrarians = {
+		days_remove = 15
+		days_re_enable = 15
+		fire_only_once = yes
+		icon = GFX_decision_eng_propaganda_campaigns
+
+		available = {
+			OR = {
+				political_power_daily > 0.25
+				has_political_power > 4
+			}
+		}
+		visible = {
+			check_variable = { GER.selected_faction = 3 }
+			NOT = { GER_faction_power_struggle_is_over = yes }
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 100
+				has_country_flag = GER_AI_RANDOM_STRASSERIST
+			}
+		}
+
+		complete_effect={
+		}
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+		
+		cost = 0
+
+		remove_effect = {
+			custom_effect_tooltip = GER_strasserists_change_effects
+
+			effect_tooltip = {
+				set_variable = {  
+					var = pop_t
+					value = 15
+					tooltip = CHANGE_FACTION_POPULARITY_TT
+				}
+				set_variable = {  
+					var = str_t
+					value = 15
+					tooltip = CHANGE_FACTION_STRENGTH_TT
+				}
+			}
+			hidden_effect={
+				add_to_variable = { GER.faction_popularity_array^3 = 15 }
+				add_to_variable = { GER.faction_strength_array^3 = 15 }
+				
+				GER_update_internal_factions = yes
+			}
+		}
+	}
+#	GER_contacts_in_the_left_opposition = {
+#		days_remove = 15
+#		days_re_enable = 15
+#		fire_only_once = yes
+#		icon = GFX_decision_SOV_left_opposition_state
+#
+#		available = {
+#			OR = {
+#				political_power_daily > 0.25
+#				has_political_power > 4
+#			}
+#		}
+#		visible = {
+#			check_variable = { GER.selected_faction = 2 }
+#			NOT = { GER_faction_power_struggle_is_over = yes }
+#		}
+#
+#		complete_effect={
+#		}
+#		
+#		modifier = {
+#			political_power_gain = -0.25
+#		}
+#		
+#		cost = 0
+#
+#		remove_effect = {
+#			custom_effect_tooltip = GER_orthodox_communists_change_effects
+#			set_variable = {  
+#				var = 2.popularity_change_var
+#				value = 20
+#				tooltip = CHANGE_FACTION_POPULARITY_TT
+#			}
+#			set_variable = {  
+#				var = 2.strength_change_var
+#				value = 10
+#				tooltip = CHANGE_FACTION_STRENGTH_TT
+#			}
+#			2 = { GER_boost_internal_faction = yes }
+#		}
+#	}
+	
+	GER_pacify_stalinists = {
+		days_remove = 30
+		fire_only_once = yes
+		icon = GFX_decision_generic_arrest
+
+		available = {
+			check_variable = { GER.faction_status_array^0 = token:GER_FACTION_STATUS_HOSTILE } 
+		}
+		visible = {
+			GER_faction_power_struggle_is_over = yes
+			check_variable = { GER.faction_status_array^0 = token:GER_FACTION_STATUS_HOSTILE }
+			NOT = { has_country_flag = action_taken_against_stalinists }
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 50
+				NOT={
+					check_variable = { GER.faction_status_array^2 = token:GER_FACTION_STATUS_IN_GOV }
+				}
+			}
+		}
+		complete_effect={
+			set_country_flag = { flag = action_taken_against_stalinists value = 1 days = 31 }
+		}
+		
+		cost = 50
+
+		remove_effect = {
+			effect_tooltip={
+				if={
+					limit = { has_idea = GER_FACTION_EFFECTS_STALINISTS_NEGATIVE }
+					remove_ideas = GER_FACTION_EFFECTS_STALINISTS_NEGATIVE
+				}
+			}
+			set_variable = { GER.faction_status_array^0 = token:GER_FACTION_STATUS_PACIFIED }
+			add_stability = 0.05
+			add_war_support = 0.05
+		}
+	}
+	
+	GER_ally_stalinists = {
+		days_remove = 30
+		fire_only_once = yes
+		icon = GFX_decision_hol_exchange_intelligence_data
+
+		available = {
+			check_variable = { GER.faction_status_array^0 = token:GER_FACTION_STATUS_HOSTILE } 
+		}
+		visible = {
+			GER_faction_power_struggle_is_over = yes
+			check_variable = { GER.faction_status_array^0 = token:GER_FACTION_STATUS_HOSTILE }
+			NOT = { has_country_flag = action_taken_against_stalinists }
+			check_variable = { GER.faction_status_array^2 = token:GER_FACTION_STATUS_IN_GOV }
+		}
+		
+		ai_will_do = {
+			base = 75
+		}
+
+		complete_effect={
+			set_country_flag = { flag = action_taken_against_stalinists value = 1 days = 31 }
+		}
+		
+		cost = 150
+
+		remove_effect = {
+			set_variable = { GER.faction_status_array^0 = token:GER_FACTION_STATUS_FRIENDLY }
+			if={
+				limit = { has_idea = GER_FACTION_EFFECTS_STALINISTS_NEGATIVE }
+				swap_ideas={
+					remove_idea = GER_FACTION_EFFECTS_STALINISTS_NEGATIVE
+					add_idea = GER_FACTION_EFFECTS_STALINISTS_POSITIVE
+				}
+			}
+		}
+	}
+	
+	GER_pacify_orthodox_communists = {
+		days_remove = 30
+		fire_only_once = yes
+		icon = GFX_decision_generic_arrest
+
+		available = {
+			check_variable = { GER.faction_status_array^1 = token:GER_FACTION_STATUS_HOSTILE } 
+		}
+		visible = {
+			GER_faction_power_struggle_is_over = yes
+			check_variable = { GER.faction_status_array^1 = token:GER_FACTION_STATUS_HOSTILE }
+			NOT = { has_country_flag = action_taken_against_orthodox_communists }
+		}
+
+		ai_will_do = {
+			base = 50
+		}
+
+		complete_effect={
+			set_country_flag = { flag = action_taken_against_orthodox_communists value = 1 days = 31 }
+		}
+		
+		cost = 50
+
+		remove_effect = {
+			effect_tooltip={
+				if={
+					limit = { has_idea = GER_FACTION_EFFECTS_ORTHODOX_COMMUNISTS_NEGATIVE }
+					remove_ideas = GER_FACTION_EFFECTS_ORTHODOX_COMMUNISTS_NEGATIVE
+				}
+			}
+			set_variable = { GER.faction_status_array^1 = token:GER_FACTION_STATUS_PACIFIED }
+			add_stability = 0.05
+			add_war_support = 0.05
+		}
+	}
+	
+	GER_ally_orthodox_communists = {
+		days_remove = 30
+		fire_only_once = yes
+		icon = GFX_decision_hol_exchange_intelligence_data
+
+		available = {
+			check_variable = { GER.faction_status_array^1 = token:GER_FACTION_STATUS_HOSTILE } 
+		}
+		visible = {
+			GER_faction_power_struggle_is_over = yes
+			check_variable = { GER.faction_status_array^1 = token:GER_FACTION_STATUS_HOSTILE }
+			NOT = { has_country_flag = action_taken_against_orthodox_communists }
+			always = no #Cannot currently be aligned, good to keep this decision code here in case you want to change it in future
+		}
+		
+		ai_will_do = {
+			base = 50
+		}
+
+		complete_effect={
+			set_country_flag = { flag = action_taken_against_orthodox_communists value = 1 days = 31 }
+		}
+		
+		cost = 150
+
+		remove_effect = {
+			set_variable = { GER.faction_status_array^1 = token:GER_FACTION_STATUS_FRIENDLY }
+			if={
+				limit = { has_idea = GER_FACTION_EFFECTS_ORTHODOX_COMMUNISTS_NEGATIVE }
+				swap_ideas={
+					remove_idea = GER_FACTION_EFFECTS_ORTHODOX_COMMUNISTS_NEGATIVE
+					add_idea = GER_FACTION_EFFECTS_ORTHODOX_COMMUNISTS_POSITIVE
+				}
+			}
+		}
+	}
+	
+	GER_pacify_national_bolshevists = {
+		days_remove = 30
+		fire_only_once = yes
+		icon = GFX_decision_generic_arrest
+
+		available = {
+			check_variable = { GER.faction_status_array^2 = token:GER_FACTION_STATUS_HOSTILE } 
+		}
+		visible = {
+			GER_faction_power_struggle_is_over = yes
+			check_variable = { GER.faction_status_array^2 = token:GER_FACTION_STATUS_HOSTILE }
+			NOT = { has_country_flag = action_taken_against_national_bolshevists }
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 50
+				NOT={
+					OR={
+						check_variable = { GER.faction_status_array^0 = token:GER_FACTION_STATUS_IN_GOV }
+						check_variable = { GER.faction_status_array^3 = token:GER_FACTION_STATUS_IN_GOV }
+					}
+				}
+			}
+		}
+
+		complete_effect={
+			set_country_flag = { flag = action_taken_against_national_bolshevists value = 1 days = 31 }
+		}
+		
+		cost = 50
+
+		remove_effect = {
+			effect_tooltip={
+				if={
+					limit = { has_idea = GER_FACTION_EFFECTS_NATIONAL_BOLSHEVISTS_NEGATIVE }
+					remove_ideas = GER_FACTION_EFFECTS_NATIONAL_BOLSHEVISTS_NEGATIVE
+				}
+			}
+			set_variable = { GER.faction_status_array^2 = token:GER_FACTION_STATUS_PACIFIED }
+			add_stability = 0.05
+			add_war_support = 0.05
+		}
+	}
+	
+	GER_ally_national_bolshevists = {
+		days_remove = 30
+		fire_only_once = yes
+		icon = GFX_decision_hol_exchange_intelligence_data
+
+		available = {
+			check_variable = { GER.faction_status_array^2 = token:GER_FACTION_STATUS_HOSTILE } 
+		}
+		visible = {
+			GER_faction_power_struggle_is_over = yes
+			check_variable = { GER.faction_status_array^2 = token:GER_FACTION_STATUS_HOSTILE }
+			NOT = { has_country_flag = action_taken_against_national_bolshevists }
+			OR={
+				check_variable = { GER.faction_status_array^0 = token:GER_FACTION_STATUS_IN_GOV }
+				check_variable = { GER.faction_status_array^3 = token:GER_FACTION_STATUS_IN_GOV }
+			}
+		}
+		
+		ai_will_do = {
+			base = 50
+		}
+
+		complete_effect={
+			set_country_flag = { flag = action_taken_against_national_bolshevists value = 1 days = 31 }
+		}
+		
+		cost = 150
+
+		remove_effect = {
+			set_variable = { GER.faction_status_array^2 = token:GER_FACTION_STATUS_FRIENDLY }
+			if={
+				limit = { has_idea = GER_FACTION_EFFECTS_NATIONAL_BOLSHEVISTS_NEGATIVE }
+				swap_ideas={
+					remove_idea = GER_FACTION_EFFECTS_NATIONAL_BOLSHEVISTS_NEGATIVE
+					add_idea = GER_FACTION_EFFECTS_NATIONAL_BOLSHEVISTS_POSITIVE
+				}
+			}
+		}
+	}
+	
+	GER_pacify_strasserists = {
+		days_remove = 30
+		fire_only_once = yes
+		icon = GFX_decision_generic_arrest
+
+		available = {
+			check_variable = { GER.faction_status_array^3 = token:GER_FACTION_STATUS_HOSTILE } 
+		}
+		visible = {
+			GER_faction_power_struggle_is_over = yes
+			check_variable = { GER.faction_status_array^3 = token:GER_FACTION_STATUS_HOSTILE }
+			NOT = { has_country_flag = action_taken_against_strasserists }
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 50
+				NOT={
+					check_variable = { GER.faction_status_array^2 = token:GER_FACTION_STATUS_IN_GOV }
+				}
+			}
+		}
+
+		complete_effect={
+			set_country_flag = { flag = action_taken_against_strasserists value = 1 days = 31 }
+		}
+		
+		cost = 50
+
+		remove_effect = {
+			effect_tooltip={
+				if={
+					limit = { has_idea = GER_FACTION_EFFECTS_STRASSERISTS_NEGATIVE }
+					remove_ideas = GER_FACTION_EFFECTS_STRASSERISTS_NEGATIVE
+				}
+			}
+			set_variable = { GER.faction_status_array^3 = token:GER_FACTION_STATUS_PACIFIED }
+			add_stability = 0.05
+			add_war_support = 0.05
+		}
+	}
+	
+	GER_ally_strasserists = {
+		days_remove = 30
+		fire_only_once = yes
+		icon = GFX_decision_hol_exchange_intelligence_data
+
+		available = {
+			check_variable = { GER.faction_status_array^3 = token:GER_FACTION_STATUS_HOSTILE } 
+		}
+		visible = {
+			GER_faction_power_struggle_is_over = yes
+			check_variable = { GER.faction_status_array^3 = token:GER_FACTION_STATUS_HOSTILE }
+			NOT = { has_country_flag = action_taken_against_strasserists }
+			check_variable = { GER.faction_status_array^2 = token:GER_FACTION_STATUS_IN_GOV }
+		}
+		
+		ai_will_do = {
+			base = 50
+		}
+
+		complete_effect={
+			set_country_flag = { flag = action_taken_against_strasserists value = 1 days = 31 }
+		}
+		
+		cost = 150
+
+		remove_effect = {
+			set_variable = { GER.faction_status_array^3 = token:GER_FACTION_STATUS_FRIENDLY }
+			if={
+				limit = { has_idea = GER_FACTION_EFFECTS_STRASSERISTS_NEGATIVE }
+				swap_ideas={
+					remove_idea = GER_FACTION_EFFECTS_STRASSERISTS_NEGATIVE
+					add_idea = GER_FACTION_EFFECTS_STRASSERISTS_POSITIVE
+				}
+			}
+		}
+	}
+}

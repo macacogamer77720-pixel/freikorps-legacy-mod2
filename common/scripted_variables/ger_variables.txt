@@ -1,0 +1,3 @@
+hugenberg_support = 0
+ludendorff_support = 0
+roehm_support = 0

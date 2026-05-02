@@ -1,0 +1,43 @@
+scripted_gui = {
+	ger_internal_factions_decision_ui = {
+		context_type = decision_category
+		window_name = "ger_internal_factions_decision_ui_window"
+		
+		ai_enabled = {
+			always = no
+		}
+		
+		dynamic_lists = {
+			GER_factions_grid_box = {
+					array = GER.faction_name_array 	#Can be any of the arrays
+					
+					#value as 'v' and index as 'i' are set so by default, best to define them anyways in case you'd want to change them	
+					value = v
+					index = i
+					
+					entry_container = "GER_faction_entry"
+			}
+		}
+		
+		effects={
+			faction_logo_click={
+				if={
+					limit = { check_variable = { i = GER.selected_faction } }
+					set_variable = { GER.selected_faction = -1 }
+				}
+				else={ set_variable = { GER.selected_faction = i } }
+			}
+		}
+		triggers={
+		}
+		properties={
+			faction_logo = { 
+				image = "[GER.GetInternalFactionLogo]"
+			}
+			
+			faction_glorious_leader = { 
+				image = "[GER.GetInternalFactionLeaderPortrait]"
+			}
+		}
+	}
+}

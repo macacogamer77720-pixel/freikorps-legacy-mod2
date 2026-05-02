@@ -1,0 +1,70 @@
+GER_faction_power_struggle_is_over={
+	OR = {
+		has_completed_focus = GER_karl_radek_focus
+		has_completed_focus = GER_ernstthalmann
+		has_completed_focus = GER_focus_paetel
+		has_completed_focus = GER_otto_strasser_focus
+	}
+}
+
+GER_propaganda_poster_slot_available = {
+	custom_trigger_tooltip = {
+		tooltip = SOV_propaganda_poster_slot_available_tt
+		OR = {
+			check_variable = { GER_poster_left_icon_frame = GER_propaganda_empty_slot_index }
+			check_variable = { GER_poster_center_icon_frame = GER_propaganda_empty_slot_index }
+			check_variable = { GER_poster_right_icon_frame = GER_propaganda_empty_slot_index }
+		}
+	}
+}
+
+
+GER_stalinists_in_power={
+	custom_trigger_tooltip={
+		tooltip = GER_stalinists_in_power_tt
+		check_variable = { GER.faction_status_array^0 = token:GER_FACTION_STATUS_IN_GOV }
+	}
+}
+GER_orthodox_communists_in_power={
+	custom_trigger_tooltip={
+		tooltip = GER_orthodox_communists_in_power_tt
+		check_variable = { GER.faction_status_array^1 = token:GER_FACTION_STATUS_IN_GOV }
+	}
+}
+GER_national_bolshevists_in_power={
+	custom_trigger_tooltip={
+		tooltip = GER_national_bolshevists_in_power_tt
+		check_variable = { GER.faction_status_array^2 = token:GER_FACTION_STATUS_IN_GOV }
+	}
+}
+GER_strasserists_in_power={
+	custom_trigger_tooltip={
+		tooltip = GER_strasserists_in_power_tt
+		check_variable = { GER.faction_status_array^3 = token:GER_FACTION_STATUS_IN_GOV }
+	}
+}
+
+GER_stalinists_are_friendly={
+	custom_trigger_tooltip={
+		tooltip = GER_stalinists_are_friendly_tt
+		check_variable = { GER.faction_status_array^0 = token:GER_FACTION_STATUS_FRIENDLY }
+	}
+}
+GER_orthodox_communists_are_friendly={
+	custom_trigger_tooltip={
+		tooltip = GER_orthodox_communists_are_friendly_tt
+		check_variable = { GER.faction_status_array^1 = token:GER_FACTION_STATUS_FRIENDLY }
+	}
+}
+GER_national_bolshevists_are_friendly={
+	custom_trigger_tooltip={
+		tooltip = GER_national_bolshevists_are_friendly_tt
+		check_variable = { GER.faction_status_array^2 = token:GER_FACTION_STATUS_FRIENDLY }
+	}
+}
+GER_strasserists_are_friendly={
+	custom_trigger_tooltip={
+		tooltip = GER_strasserists_are_friendly_tt
+		check_variable = { GER.faction_status_array^3 = token:GER_FACTION_STATUS_FRIENDLY }
+	}
+}

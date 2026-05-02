@@ -1,0 +1,28 @@
+characters = {
+	#Ernst Rohm
+	ernst_rohm_ernst_rohm = {
+		name = ernst_rohm_ernst_rohm
+		portraits = {
+			civilian = {
+				large = GFX_ernst_rohm_ernst_rohm_large
+			}
+			army = {
+				large = GFX_ernst_rohm_ernst_rohm_large
+				small = GFX_ernst_rohm_ernst_rohm_small
+			}
+		}
+		country_leader = {
+			ideology = nacionalsocialismo_pragmatico
+			traits = { war_hero brilliant_strategist infantry_officer }
+			expire = ""
+		}
+		field_marshal = {
+			traits = {  }
+			skill = 5
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 
+			logistics_skill = 
+		}
+	}
+}

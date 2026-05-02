@@ -1,0 +1,124 @@
+ideas={
+	hidden_ideas={
+		GER_FACTION_STATUS_HOSTILE={}
+		GER_FACTION_STATUS_PACIFIED={}
+		GER_FACTION_STATUS_FRIENDLY={}
+		GER_FACTION_STATUS_IN_GOV={}
+		
+		GER_FACTION_NAME_STALINISTS={}
+		GER_FACTION_SYMBOL_STALINISTS={}
+		GER_FACTION_LEADER_NAME_STALINISTS={}
+		GER_FACTION_LEADER_GFX_STALINISTS={}
+		GER_FACTION_OVERLAY_GFX_STALINISTS={}
+		GER_FACTION_EFFECTS_STALINISTS_POSITIVE={
+			removal_cost = -1
+			available = { 
+				OR={
+					check_variable = { GER.faction_status_array^0 = token:GER_FACTION_STATUS_FRIENDLY } 
+					check_variable = { GER.faction_status_array^0 = token:GER_FACTION_STATUS_IN_GOV } 
+				}
+			}
+			modifier={
+				political_power_gain = 0.10
+				production_speed_buildings_factor = 0.10
+			}
+		}
+		GER_FACTION_EFFECTS_STALINISTS_NEGATIVE={
+			removal_cost = -1
+			available = { 
+				check_variable = { GER.faction_status_array^0 = token:GER_FACTION_STATUS_HOSTILE }
+			}
+			modifier={
+				political_power_gain = -0.10
+				production_speed_buildings_factor = -0.10
+			}
+		}
+		
+		GER_FACTION_NAME_ORTHODOX_COMMUNISTS={}
+		GER_FACTION_SYMBOL_ORTHODOX_COMMUNISTS={}
+		GER_FACTION_LEADER_NAME_ORTHODOX_COMMUNISTS={}
+		GER_FACTION_LEADER_GFX_ORTHODOX_COMMUNISTS={}
+		GER_FACTION_OVERLAY_GFX_ORTHODOX_COMMUNISTS={}
+		GER_FACTION_EFFECTS_ORTHODOX_COMMUNISTS_POSITIVE={
+			removal_cost = -1
+			available = { 
+				OR={
+					check_variable = { GER.faction_status_array^1 = token:GER_FACTION_STATUS_FRIENDLY } 
+					check_variable = { GER.faction_status_array^1 = token:GER_FACTION_STATUS_IN_GOV } 
+				}
+			}
+			modifier={
+				compliance_growth = 0.05	#compliance_growth is % daily, compliance_gain is set amount daily
+				non_core_manpower = 0.05
+			}
+		}
+		GER_FACTION_EFFECTS_ORTHODOX_COMMUNISTS_NEGATIVE={
+			removal_cost = -1
+			available = { 
+				check_variable = { GER.faction_status_array^1 = token:GER_FACTION_STATUS_HOSTILE }
+			}
+			modifier={
+				compliance_growth = -0.05
+				non_core_manpower = -0.05
+			}
+		}
+		
+		GER_FACTION_NAME_NATIONAL_BOLSHEVISTS={}
+		GER_FACTION_SYMBOL_NATIONAL_BOLSHEVISTS={}
+		GER_FACTION_LEADER_NAME_NATIONAL_BOLSHEVISTS={}
+		GER_FACTION_LEADER_GFX_NATIONAL_BOLSHEVISTS={}
+		GER_FACTION_OVERLAY_GFX_NATIONAL_BOLSHEVISTS={}
+		GER_FACTION_EFFECTS_NATIONAL_BOLSHEVISTS_POSITIVE={
+			removal_cost = -1
+			available = { 
+				OR={
+					check_variable = { GER.faction_status_array^2 = token:GER_FACTION_STATUS_FRIENDLY } 
+					check_variable = { GER.faction_status_array^2 = token:GER_FACTION_STATUS_IN_GOV } 
+				}
+			}
+			modifier={
+				research_speed_factor = 0.05
+				conscription_factor = 0.05
+			}
+		}
+		GER_FACTION_EFFECTS_NATIONAL_BOLSHEVISTS_NEGATIVE={
+			removal_cost = -1
+			available = { 
+				check_variable = { GER.faction_status_array^2 = token:GER_FACTION_STATUS_HOSTILE }
+			}
+			modifier={
+				research_speed_factor = -0.05
+				conscription_factor = -0.05
+			}
+		}
+		
+		GER_FACTION_NAME_STRASSERISTS={}
+		GER_FACTION_SYMBOL_STRASSERISTS={}
+		GER_FACTION_LEADER_NAME_STRASSERISTS={}
+		GER_FACTION_LEADER_GFX_STRASSERISTS={}
+		GER_FACTION_OVERLAY_GFX_STRASSERISTS={}
+		GER_FACTION_EFFECTS_STRASSERISTS_POSITIVE={
+			removal_cost = -1
+			available = { 
+				OR={
+					check_variable = { GER.faction_status_array^3 = token:GER_FACTION_STATUS_FRIENDLY } 
+					check_variable = { GER.faction_status_array^3 = token:GER_FACTION_STATUS_IN_GOV } 
+				}
+			}
+			modifier={
+				consumer_goods_factor = -0.05
+				industry_air_damage_factor = -0.15
+			}
+		}
+		GER_FACTION_EFFECTS_STRASSERISTS_NEGATIVE={
+			removal_cost = -1
+			available = { 
+				check_variable = { GER.faction_status_array^3 = token:GER_FACTION_STATUS_HOSTILE }
+			}
+			modifier={
+				consumer_goods_factor = 0.05
+				industry_air_damage_factor = 0.15
+			}
+		}
+	}
+}

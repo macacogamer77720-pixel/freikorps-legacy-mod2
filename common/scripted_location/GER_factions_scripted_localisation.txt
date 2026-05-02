@@ -1,0 +1,277 @@
+# Allows you to create your own dynamic keys
+# to be called in localization.
+# defined_text -> this is it, we're defining the text
+# text -> a discrete entry that can be picked to display in loc.
+# trigger -> determines if a text entry will be picked or not.
+# (The triggers need to be valid for the scope the key is called in
+# (eg Root or From.From).)
+# localization_key -> points to the localization key
+# that'll be used if trigger passes
+
+defined_text = {
+	name = GetStalinistsName
+	text = {
+		trigger = {
+			original_tag = GER
+		}
+		localization_key = GER_stalinists_name_and_icon
+	}
+}
+
+defined_text = {
+	name = GetNationalBolshevistsName
+	text = {
+		trigger = {
+			original_tag = GER
+		}
+		localization_key = GER_national_bolshevists_name_and_icon
+	}
+}
+
+defined_text = {
+	name = GetStrasseristsName
+	text = {
+		trigger = {
+			original_tag = GER
+		}
+		localization_key = GER_strasserists_name_and_icon
+	}
+}
+
+defined_text = {
+	name = GetOrthodoxCommunistsName
+	text = {
+		trigger = {
+			original_tag = GER
+		}
+		localization_key = GER_orthodox_communists_name_and_icon
+	}
+}
+
+defined_text = {
+	name = GetStalinistsStrengthStatus
+	text = {
+		trigger = {
+			has_country_flag = GER_stalinists_imprisonned_flag
+		}
+		localization_key = GER_strength_status_imprisonned
+	}
+	text = {
+		localization_key = GER_stalinists_strength_status_amount
+	}
+}
+
+defined_text = {
+	name = GetNationalBolshevistsStrengthStatus
+	text = {
+		trigger = {
+			has_country_flag = GER_national_bolshevists_imprisonned_flag
+		}
+		localization_key = GER_strength_status_imprisonned
+	}
+	text = {
+		localization_key = GER_national_bolshevists_strength_status_amount
+	}
+}
+
+defined_text = {
+	name = GetStrasseristsStrengthStatus
+	text = {
+		trigger = {
+			has_country_flag = GER_strasserists_imprisonned_flag
+		}
+		localization_key = GER_strength_status_imprisonned
+	}
+	text = {
+		localization_key = GER_strasserists_strength_status_amount
+	}
+}
+
+defined_text = {
+	name = GetOrthodoxCommunistsStrengthStatus
+	text = {
+		trigger = {
+			has_country_flag = GER_orthodox_communists_imprisonned_flag
+		}
+		localization_key = GER_strength_status_imprisonned
+	}
+	text = {
+		localization_key = GER_orthodox_communists_strength_status_amount
+	}
+}
+
+defined_text = {
+	name = GetStalinistsPopularityStatus
+	text = {
+		trigger = {
+			has_country_flag = GER_stalinists_imprisonned_flag
+		}
+		localization_key = GER_popularity_status_imprisonned
+	}
+	text = {
+		localization_key = GER_stalinists_popularity_status_amount
+	}
+}
+
+defined_text = {
+	name = GetNationalBolshevistsPopularityStatus
+	text = {
+		trigger = {
+			has_country_flag = GER_national_bolshevists_imprisonned_flag
+		}
+		localization_key = GER_popularity_status_imprisonned
+	}
+	text = {
+		localization_key = GER_national_bolshevists_popularity_status_amount
+	}
+}
+
+defined_text = {
+	name = GetStrasseristsPopularityStatus
+	text = {
+		trigger = {
+			has_country_flag = GER_strasserists_imprisonned_flag
+		}
+		localization_key = GER_popularity_status_imprisonned
+	}
+	text = {
+		localization_key = GER_strasserists_popularity_status_amount
+	}
+}
+
+defined_text = {
+	name = GetOrthodoxCommunistsPopularityStatus
+	text = {
+		trigger = {
+			has_country_flag = GER_orthodox_communists_imprisonned_flag
+		}
+		localization_key = GER_popularity_status_imprisonned
+	}
+	text = {
+		localization_key = GER_orthodox_communists_popularity_status_amount
+	}
+}
+
+
+defined_text = {
+	name = GetInternalFactionName
+	text = {
+		localization_key = "[?GER.faction_name_array^i.GetTokenLocalizedKey]"
+	}
+
+}
+defined_text = {
+	name = GetInternalFactionNameAndIcon
+	text = {
+		localization_key = "[?GER.faction_symbol_array^i.GetTokenLocalizedKey]  [?GER.faction_name_array^i.GetTokenLocalizedKey]"
+	}
+}
+defined_text = {
+	name = DECISIONSSCOPE_GetInternalFactionNameAndIcon
+	text = {
+		localization_key = "[?GER.faction_symbol_array^GER.selected_faction.GetTokenLocalizedKey]  [?GER.faction_name_array^GER.selected_faction.GetTokenLocalizedKey]"
+	}
+
+}
+
+defined_text = {
+	name = GetInternalFactionLeaderPortrait
+	text = {
+		localization_key = "[?GER.faction_leader_gfx_array^i.GetTokenLocalizedKey]"
+	}
+}
+defined_text = {
+	name = GetInternalFactionLogo
+	text = {
+		localization_key = "[?GER.faction_overlay_gfx_array^i.GetTokenLocalizedKey]"
+	}
+}
+
+defined_text = {
+	name = GetFactionToBeBolstered
+	text={
+		trigger = { has_variable = GER.faction_to_bolster }
+		localization_key = "[?GER.faction_symbol_array^GER.faction_to_bolster.GetTokenLocalizedKey]  [?GER.faction_name_array^GER.faction_to_bolster.GetTokenLocalizedKey]"
+	}
+	text={
+		localization_key = "[?GER.faction_symbol_array^GER.selected_faction.GetTokenLocalizedKey]  [?GER.faction_name_array^GER.selected_faction.GetTokenLocalizedKey]"
+	}
+}
+
+#Discredit faction decision unavailable but might as well keep this in
+defined_text = {
+	name = GetFactionToBeDiscredited
+	text={
+		trigger = { has_variable = GER.faction_to_discredit  }
+		localization_key = "[?GER.faction_symbol_array^GER.faction_to_discredit.GetTokenLocalizedKey]  [?GER.faction_name_array^GER.faction_to_discredit.GetTokenLocalizedKey]"
+	}
+	text={
+		localization_key = "[?GER.faction_symbol_array^GER.selected_faction.GetTokenLocalizedKey]  [?GER.faction_name_array^GER.selected_faction.GetTokenLocalizedKey]"
+	}
+}
+
+defined_text = {
+	name = GetFactionToGiveSpeech
+	text={
+		trigger = { has_variable = GER.faction_speech  }
+		localization_key = "[?GER.faction_symbol_array^GER.faction_speech.GetTokenLocalizedKey]  [?GER.faction_name_array^GER.faction_speech.GetTokenLocalizedKey]"
+	}
+	text={
+		localization_key = "[?GER.faction_symbol_array^GER.selected_faction.GetTokenLocalizedKey]  [?GER.faction_name_array^GER.selected_faction.GetTokenLocalizedKey]"
+	}
+}
+
+
+defined_text = {
+	name = GetGERFactionTT
+	text={
+		trigger = { NOT = { GER_faction_power_struggle_is_over = yes } }
+		localization_key = "GER_faction_tt"
+	}
+	text={
+		localization_key = "GER_faction_tt_2"
+	}
+}
+
+defined_text = {
+	name = GetGERFactionText
+	text={
+		trigger = { NOT = { GER_faction_power_struggle_is_over = yes } }
+		localization_key = "faction_text"
+	}
+	text={
+		trigger = { check_variable = { i = 0 } has_idea = GER_FACTION_EFFECTS_STALINISTS_NEGATIVE }
+		localization_key = "GER_STALINISTS_EFFECTS_NEGATIVE_TT"
+	}
+	text={
+		trigger = { check_variable = { i = 0 } has_idea = GER_FACTION_EFFECTS_STALINISTS_POSITIVE }
+		localization_key = "GER_STALINISTS_EFFECTS_POSITIVE_TT"
+	}
+	text={
+		trigger = { check_variable = { i = 1 } has_idea = GER_FACTION_EFFECTS_ORTHODOX_COMMUNISTS_NEGATIVE }
+		localization_key = "GER_ORTHODOX_COMMUNISTS_EFFECTS_NEGATIVE_TT"
+	}
+	text={
+		trigger = { check_variable = { i = 1 } has_idea = GER_FACTION_EFFECTS_ORTHODOX_COMMUNISTS_POSITIVE }
+		localization_key = "GER_ORTHODOX_COMMUNISTS_EFFECTS_POSITIVE_TT"
+	}
+	text={
+		trigger = { check_variable = { i = 2 } has_idea = GER_FACTION_EFFECTS_NATIONAL_BOLSHEVISTS_NEGATIVE }
+		localization_key = "GER_NATIONAL_BOLSHEVISTS_EFFECTS_NEGATIVE_TT"
+	}
+	text={
+		trigger = { check_variable = { i = 2 } has_idea = GER_FACTION_EFFECTS_NATIONAL_BOLSHEVISTS_POSITIVE }
+		localization_key = "GER_NATIONAL_BOLSHEVISTS_EFFECTS_POSITIVE_TT"
+	}
+	text={
+		trigger = { check_variable = { i = 3 } has_idea = GER_FACTION_EFFECTS_STRASSERISTS_NEGATIVE }
+		localization_key = "GER_STRASSERISTS_EFFECTS_NEGATIVE_TT"
+	}
+	text={
+		trigger = { check_variable = { i = 3 } has_idea = GER_FACTION_EFFECTS_STRASSERISTS_POSITIVE }
+		localization_key = "GER_STRASSERISTS_EFFECTS_POSITIVE_TT"
+	}
+	text={
+		localization_key = "GER_FACTION_NEUTRAL"
+	}
+}

@@ -1,0 +1,16 @@
+character = { 
+        #Lundendorf
+	wolfgang_kapp_lundendorf = {
+		name = wolfgang_kapp_lundendorf
+		portraits = {
+			civilian = {
+				large = GFX_wolfgang_kapp_lundendorf_large
+			}
+			country_leader = {
+			ideology = disident_reactionism
+			traits = { media_personality economist }
+			expire = ""
+		 }
+	   }
+    }
+}
