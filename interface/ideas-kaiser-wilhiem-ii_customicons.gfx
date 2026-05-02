@@ -1,0 +1,39 @@
+spriteTypes = { 
+	##Icon For: Kaiser Wilhiem II
+	SpriteType = { 
+		name = "GFX_idea_kaiser_wilhiem_ii-817115"
+		texturefile = "gfx/interface/ideas/kaiser-wilhiem-ii-ideas/kaiser_wilhiem_ii-817115.dds"
+	}
+
+	##Icon For: over-mobilized industry
+	SpriteType = { 
+		name = "GFX_idea_overmobilized_industry-1416"
+		texturefile = "gfx/interface/ideas/kaiser-wilhiem-ii-ideas/overmobilized_industry-1416.dds"
+	}
+
+	##Icon For: the Freikorps question
+	SpriteType = { 
+		name = "GFX_idea_the_freikorps_question-1082"
+		texturefile = "gfx/interface/ideas/kaiser-wilhiem-ii-ideas/the_freikorps_question-1082.dds"
+	}
+
+	##Icon For: the still-fresh memory of the great war
+	SpriteType = { 
+		name = "GFX_idea_the_stillfresh_memory_of_the_great_war-2148"
+		texturefile = "gfx/interface/ideas/kaiser-wilhiem-ii-ideas/the_stillfresh_memory_of_the_great_war-2148.dds"
+	}
+
+	##Icon For: almost no international support
+	SpriteType = { 
+		name = "GFX_idea_almost_no_international_support-2039"
+		texturefile = "gfx/interface/ideas/kaiser-wilhiem-ii-ideas/almost_no_international_support-2039.dds"
+	}
+
+	##Icon For: Memoirs of 1929
+	SpriteType = { 
+		name = "GFX_idea_memoirs_of_1929-1132"
+		texturefile = "gfx/interface/ideas/kaiser-wilhiem-ii-ideas/memoirs_of_1929-1132.dds"
+	}
+
+ 
+ }
