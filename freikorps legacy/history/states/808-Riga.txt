@@ -8,6 +8,7 @@ state={
 
 	history={
 		owner = UBD
+		victory_points = {
 			9340 5 
 		}
 		buildings = {
