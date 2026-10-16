@@ -1,0 +1,51 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_scripted_gui_window_background"
+		textureFile = "/gfx/interface/scripted_gui_graphics/scripted_gui_background.dds"
+	}
+        spriteType = {
+		name = "GFX_close_button"
+		textureFile = "/gfx/interface/scripted_gui_graphics/close_button.dds"
+	}
+        spriteType = {
+		name = "GFX_riga"
+		textureFile = "/gfx/interface/scripted_gui_graphics/riga.dds"
+	}
+        spriteType = {
+		name = "GFX_levonia"
+		textureFile = "/gfx/interface/scripted_gui_graphics/levonia.dds"
+	}
+        spriteType = {
+		name = "GFX_estonia"
+		textureFile = "/gfx/interface/scripted_gui_graphics/estonia.dds"
+	}
+        spriteType = {
+		name = "GFX_spongebob"
+		textureFile = "/gfx/interface/scripted_gui_graphics/spongebob.dds"
+	}
+        spriteType = {
+		name = "GFX_bubble"
+		textureFile = "/gfx/interface/scripted_gui_graphics/bubble.dds"
+	}
+	 spriteType = {
+		name = "GFX_comand_button"
+		textureFile = "/gfx/interface/scripted_gui_graphics/comand_button.dds"
+	}
+	spriteType = {
+		name = "GFX_consumer_goods_botton"
+		textureFile = "/gfx/interface/scripted_gui_graphics/consumer_goods_botton.dds"
+	}
+	spriteType = {
+		name = "GFX_pp_button"
+		textureFile = "/gfx/interface/scripted_gui_graphics/pp_button.dds"
+	}
+	spriteType = {
+		name = "GFX_arms_button"
+		textureFile = "/gfx/interface/scripted_gui_graphics/arms_button.dds"
+	}
+	spriteType = {
+		name = "GFX_achive_botton"
+		textureFile = "/gfx/interface/scripted_gui_graphics/achive_botton.dds"
+	}
+}

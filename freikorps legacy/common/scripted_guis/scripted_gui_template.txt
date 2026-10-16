@@ -1,0 +1,568 @@
+scripted_gui = {
+  new_scripted_gui = {
+    window_name = "new_scripted_gui_window"
+    context_type = player_context
+
+    visible = {
+		has_country_flag = operation_ostwind
+    }
+
+    effects = {
+      close_button_click = {
+        clr_country_flag = operation_ostwind
+      }
+      spongebob_image_click = {
+        set_country_flag = cournland_in_the_map
+        clr_country_flag = levonia_in_the_map
+        clr_country_flag = estonia_in_the_map
+        clr_country_flag = riga_in_the_map
+      }
+      riga_click = {
+        clr_country_flag = cournland_in_the_map
+        clr_country_flag = levonia_in_the_map
+        clr_country_flag = estonia_in_the_map
+        set_country_flag = riga_in_the_map
+      }
+      livonia_click = {
+        clr_country_flag = cournland_in_the_map
+        set_country_flag = levonia_in_the_map
+        clr_country_flag = estonia_in_the_map
+        clr_country_flag = riga_in_the_map
+      }
+      estonia_click = {
+        clr_country_flag = cournland_in_the_map
+        clr_country_flag = levonia_in_the_map
+        set_country_flag = estonia_in_the_map
+        clr_country_flag = riga_in_the_map
+      }
+    }
+
+    triggers = {
+    }
+
+    dynamic_lists = {
+	}
+
+    properties = {
+    }
+
+    ai_enabled = {
+		always = no
+    }
+
+    ai_test_interval = 290  # The higher, the long it takes the ai to do actions
+	ai_test_variance = 0.5
+
+    ai_check = {
+    }
+
+    ai_check_scope = {
+    }
+
+    ai_weights = {
+    }
+  }
+  cournland_in_the_map = {
+    window_name = "cournland_in_the_map"
+    context_type = player_context
+
+    visible = {
+		has_country_flag = cournland_in_the_map
+    has_country_flag = operation_ostwind
+    }
+
+    effects = {
+      comand_button_cournland_click = {
+        set_country_flag = cournland_comand_achive
+        add_command_power = -20
+      }
+      pp_button_cournland_click = {
+        set_country_flag = cournland_pp_achive
+        add_political_power = -150
+      }
+      consumer_goods_button_cournland_click = {
+        set_country_flag = cournland_consumer_goods_achive
+      }
+      arms_button_cournland_click = {
+        set_country_flag = cournland_arms_achive
+          add_equipment_to_stockpile = {
+          type = infantry_equipment_1
+          amount = -5000
+        }
+      }
+    }
+
+    triggers = {
+      pp_button_cournland_click_enabled = {
+       
+         has_political_power > 150
+                    
+      }
+      comand_button_cournland_click_enabled = {
+        
+         command_power > 30
+                    
+      }
+      consumer_goods_button_cournland_click_enabled = {
+       
+         NOT = { has_country_flag = funding_the_eastern_Freikorps }
+                    
+      }
+      arms_button_cournland_click_enabled = {
+       has_equipment = {
+         infantry_equipment_1 > 5000
+      }    
+      }
+    }
+
+    dynamic_lists = {
+	  }
+
+    properties = {
+    }
+
+    ai_enabled = {
+		always = no
+    }
+
+    ai_test_interval = 290  # The higher, the long it takes the ai to do actions
+	  ai_test_variance = 0.5
+
+    ai_check = {
+    }
+
+    ai_check_scope = {
+    }
+
+    ai_weights = {
+    }
+  }
+  cournland_in_the_map2 = {
+    window_name = "cournland_in_the_map2"
+    context_type = player_context
+
+    visible = {
+    has_country_flag = operation_ostwind
+    has_country_flag = cournland_in_the_map
+
+    }
+
+    effects = {
+      
+    }
+
+    triggers = {
+      comand_button_cournland_achive_visible = {
+        has_country_flag = cournland_comand_achive
+      }
+      pp_button_cournland_achive_visible = {
+        has_country_flag = cournland_pp_achive
+      }
+      consumer_goods_button_cournland_achive_visible = {
+        has_country_flag = cournland_consumer_goods_achive
+      }
+      arms_button_cournland_achive_visible = {
+        has_country_flag = cournland_arms_achive
+      }
+    }
+
+    dynamic_lists = {
+	  }
+
+    properties = {
+    }
+
+    ai_enabled = {
+		always = no
+    }
+
+    ai_test_interval = 290  # The higher, the long it takes the ai to do actions
+	  ai_test_variance = 0.5
+
+    ai_check = {
+    }
+
+    ai_check_scope = {
+    }
+
+    ai_weights = {
+    }
+  }
+  levonia_in_the_map = {
+    window_name = "levonia_in_the_map"
+    context_type = player_context
+
+    visible = {
+		has_country_flag = levonia_in_the_map
+    has_country_flag = operation_ostwind
+    }
+
+    effects = {
+      comand_button_levonia_click = {
+        set_country_flag = levonia_comand_achive
+        add_command_power = -20
+      }
+      pp_button_levonia_click = {
+        set_country_flag = levonia_pp_achive
+        add_political_power = -150
+      }
+      consumer_goods_button_levonia_click = {
+        set_country_flag = levonia_consumer_goods_achive
+      }
+      arms_button_levonia_click = {
+        set_country_flag = levonia_arms_achive
+          add_equipment_to_stockpile = {
+          type = infantry_equipment_1
+          amount = -5000
+        }
+      }
+    }
+
+    triggers = {
+      pp_button_levonia_click_enabled = {
+        
+         has_political_power > 150
+                    
+      }
+      comand_button_levonia_click_enabled = {
+        
+         command_power > 30
+                    
+      }
+      consumer_goods_button_levonia_click_enabled = {
+        
+         NOT = { has_country_flag = funding_the_eastern_Freikorps }
+                    
+      }
+      arms_button_levonia_click_enabled = {
+       has_equipment = {
+         infantry_equipment_1 > 5000
+      }    
+      }
+    }
+
+    dynamic_lists = {
+	  }
+
+    properties = {
+    }
+
+    ai_enabled = {
+		always = no
+    }
+
+    ai_test_interval = 290  # The higher, the long it takes the ai to do actions
+	  ai_test_variance = 0.5
+
+    ai_check = {
+    }
+
+    ai_check_scope = {
+    }
+
+    ai_weights = {
+    }
+  }
+  levonia_in_the_map2 = {
+    window_name = "levonia_in_the_map2"
+    context_type = player_context
+
+    visible = {
+    has_country_flag = operation_ostwind
+    has_country_flag = levonia_in_the_map
+
+    }
+
+    effects = {
+      
+    }
+
+    triggers = {
+      comand_button_levonia_achive_visible = {
+        has_country_flag = levonia_comand_achive
+      }
+      pp_button_levonia_achive_visible = {
+        has_country_flag = levonia_pp_achive
+      }
+      consumer_goods_button_levonia_achive_visible = {
+        has_country_flag = levonia_consumer_goods_achive
+      }
+      arms_button_levonia_achive_visible = {
+        has_country_flag = levonia_arms_achive
+      }
+    }
+
+    dynamic_lists = {
+	  }
+
+    properties = {
+    }
+
+    ai_enabled = {
+		always = no
+    }
+
+    ai_test_interval = 290  # The higher, the long it takes the ai to do actions
+	  ai_test_variance = 0.5
+
+    ai_check = {
+    }
+
+    ai_check_scope = {
+    }
+
+    ai_weights = {
+    }
+  }
+  estonia_in_the_map = {
+    window_name = "estonia_in_the_map"
+    context_type = player_context
+
+    visible = {
+		has_country_flag = estonia_in_the_map
+    has_country_flag = operation_ostwind
+    }
+
+    effects = {
+      comand_button_estonia_click = {
+        set_country_flag = estonia_comand_achive
+        add_command_power = -20
+      }
+      pp_button_estonia_click = {
+        set_country_flag = estonia_pp_achive
+        add_political_power = -150
+      }
+      consumer_goods_button_estonia_click = {
+        set_country_flag = estonia_consumer_goods_achive
+      }
+      arms_button_estonia_click = {
+        set_country_flag = estonia_arms_achive
+          add_equipment_to_stockpile = {
+          type = infantry_equipment_1
+          amount = -5000
+        }
+      }
+    }
+
+    triggers = {
+      pp_button_estonia_click_enabled = {
+       
+         has_political_power > 150
+                    
+      }
+      comand_button_estonia_click_enabled = {
+        
+         command_power > 30
+                    
+      }
+      consumer_goods_button_estonia_click_enabled = {
+       
+         NOT = { has_country_flag = funding_the_eastern_Freikorps }
+                    
+      }
+      arms_button_estonia_click_enabled = {
+       has_equipment = {
+         infantry_equipment_1 > 5000
+      }    
+      }
+    }
+
+    dynamic_lists = {
+	  }
+
+    properties = {
+    }
+
+    ai_enabled = {
+		always = no
+    }
+
+    ai_test_interval = 290  # The higher, the long it takes the ai to do actions
+	  ai_test_variance = 0.5
+
+    ai_check = {
+    }
+
+    ai_check_scope = {
+    }
+
+    ai_weights = {
+    }
+  }
+  estonia_in_the_map2 = {
+    window_name = "estonia_in_the_map2"
+    context_type = player_context
+
+    visible = {
+    has_country_flag = operation_ostwind
+    has_country_flag = estonia_in_the_map
+
+    }
+
+    effects = {
+      
+    }
+
+    triggers = {
+      comand_button_estonia_achive_visible = {
+        has_country_flag = estonia_comand_achive
+      }
+      pp_button_estonia_achive_visible = {
+        has_country_flag = estonia_pp_achive
+      }
+      consumer_goods_button_estonia_achive_visible = {
+        has_country_flag = estonia_consumer_goods_achive
+      }
+      arms_button_estonia_achive_visible = {
+        has_country_flag = estonia_arms_achive
+      }
+    }
+
+    dynamic_lists = {
+	  }
+
+    properties = {
+    }
+
+    ai_enabled = {
+		always = no
+    }
+
+    ai_test_interval = 290  # The higher, the long it takes the ai to do actions
+	  ai_test_variance = 0.5
+
+    ai_check = {
+    }
+
+    ai_check_scope = {
+    }
+
+    ai_weights = {
+    }
+  }
+  riga_in_the_map = {
+    window_name = "riga_in_the_map"
+    context_type = player_context
+
+    visible = {
+		has_country_flag = riga_in_the_map
+    has_country_flag = operation_ostwind
+    }
+
+    effects = {
+      comand_button_riga_click = {
+        set_country_flag = riga_comand_achive
+        add_command_power = -20
+      }
+      pp_button_riga_click = {
+        set_country_flag = riga_pp_achive
+        add_political_power = -150
+      }
+      consumer_goods_button_riga_click = {
+        set_country_flag = riga_consumer_goods_achive
+      }
+      arms_button_riga_click = {
+        set_country_flag = riga_arms_achive
+          add_equipment_to_stockpile = {
+          type = infantry_equipment_1
+          amount = -5000
+        }
+      }
+    }
+
+    triggers = {
+      pp_button_riga_click_enabled = {
+        
+         has_political_power > 150
+                    
+      }
+      comand_button_riga_click_enabled = {
+        
+         command_power > 30
+                    
+      }
+      consumer_goods_button_riga_click_enabled = {
+         NOT = { has_country_flag = funding_the_eastern_Freikorps }
+                    
+      }
+      arms_button_riga_click_enabled = {
+       has_equipment = {
+         infantry_equipment_1 > 5000
+      }    
+      }
+    }
+
+    dynamic_lists = {
+	  }
+
+    properties = {
+    }
+
+    ai_enabled = {
+		always = no
+    }
+
+    ai_test_interval = 290  # The higher, the long it takes the ai to do actions
+	  ai_test_variance = 0.5
+
+    ai_check = {
+    }
+
+    ai_check_scope = {
+    }
+
+    ai_weights = {
+    }
+  }
+  riga_in_the_map2 = {
+    window_name = "riga_in_the_map2"
+    context_type = player_context
+
+    visible = {
+    has_country_flag = operation_ostwind
+    has_country_flag = riga_in_the_map
+
+    }
+
+    effects = {
+      
+    }
+
+    triggers = {
+      comand_button_riga_achive_visible = {
+        has_country_flag = riga_comand_achive
+      }
+      pp_button_riga_achive_visible = {
+        has_country_flag = riga_pp_achive
+      }
+      consumer_goods_button_riga_achive_visible = {
+        has_country_flag = riga_consumer_goods_achive
+      }
+      arms_button_riga_achive_visible = {
+        has_country_flag = riga_arms_achive
+      }
+    }
+
+    dynamic_lists = {
+	  }
+
+    properties = {
+    }
+
+    ai_enabled = {
+		always = no
+    }
+
+    ai_test_interval = 290  # The higher, the long it takes the ai to do actions
+	  ai_test_variance = 0.5
+
+    ai_check = {
+    }
+
+    ai_check_scope = {
+    }
+
+    ai_weights = {
+    }
+  }
+}

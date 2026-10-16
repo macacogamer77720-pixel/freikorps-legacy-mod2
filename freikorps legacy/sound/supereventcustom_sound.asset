@@ -1,0 +1,6 @@
+
+sound = {
+	name = "se_04" #Назва звуку
+	file = "menu/se_04.wav" ## шлях до звуку
+	always_load = no
+}

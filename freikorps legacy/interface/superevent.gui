@@ -1,0 +1,80 @@
+guiTypes = { #Ваш супер івент#
+	
+	containerWindowType = {
+		name = "super_event_custom_window" #перша назва із super_event.txt#
+		size = { width = 400 height = 530 }
+		position = { x=0 y=-0 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		show_sound = se_04 #Звук твого супер івенту# 
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_bg"
+		}
+
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 15 y = 20 }
+			font = "hoi_20bs"
+			borderSize = {x = 0 y = 0}
+			text = "SUPER_EVENT_T" #Назва зверху, текст#
+			maxWidth = 370
+			maxHeight = 24
+			format = centre
+		}
+	}
+
+	containerWindowType = {
+		name = "superevent_frame_se_custom" #друга назва із super_event.txt#
+		size = { width = 588 height = 438 }
+		position = { x=0 y=0 }
+		Orientation = center
+		Origo = center
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_bg"
+		}
+
+		buttonType = {
+			name = "Option" #НЕ змінюй назву кнопки#
+			text = "SUPER_EVENT_A"  #кнопка і текст на ній#
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 218 }
+			quadTextureSprite ="GFX_subscription_startup_button"
+			buttonFont = "hoi_20bs"
+			Orientation = center
+		}
+
+		iconType = {
+			name ="image"
+			spriteType = "GFX_super_event_pic_01" #Зображення#
+			position = { x= -279 y = -204 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name ="underlay"
+			spriteType = "GFX_superevent_text_underlay" #Шаблон за текстом#
+			position = { x= 25 y = -153 }
+			Orientation = lower_left
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "text"
+			position = {  x= 70 y = -153 }
+			font = "hoi_20bs"
+			text = "SUPER_EVENT_D" #опис твого супер івенту#
+			maxWidth = 500
+			maxHeight = 173
+			fixedsize = yes
+			format = right
+			Orientation = lower_left
+		}
+	}
+}

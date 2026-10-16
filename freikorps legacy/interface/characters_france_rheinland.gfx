@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_france_rheinland_Francois_Darlan_large"
+		texturefile = "gfx/characters/france_rheinland/france_rheinland_Francois_Darlan_large.dds"
+	}
+}

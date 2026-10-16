@@ -187,5 +187,108 @@ spriteTypes = {	##Icon For:
 		}
 		legacy_lazy_load = no
 	}
+	##Icon For: 
+	SpriteType = { 
+		name = "GFX_GER_the_ludendorf_vision"
+		texturefile = "gfx/interface/goals/12.dds"
+	}
+	##Icon For: 
+	SpriteType = { 
+		name = "GFX_GER_Fix_the_political_situacion"
+		texturefile = "gfx/interface/goals/Fix_the_political_situacion.dds"
+	}
+	##Icon For: 
+	SpriteType = { 
+		name = "GFX_GER_order_must_prevail"
+		texturefile = "gfx/interface/goals/orden_must_prevail.dds"
+	}
+	##Icon For: 
+	SpriteType = { 
+		name = "GFX_GER_prohibit_public_demonstrations"
+		texturefile = "gfx/interface/goals/pribide_public.dds"
+	}
+	##Icon For: 
+	SpriteType = { 
+		name = "GFX_GER_the_nation_does_not_negotiate"
+		texturefile = "gfx/interface/goals/the_nation_does_not_negocite.dds"
+	}
+	SpriteType = { 
+		name = "GFX_GER_the_freikrops_are_untachable"
+		texturefile = "gfx/interface/goals/the_freikrops_are_untachable.dds"
+	}
+	##Icon For: 
+	SpriteType = { 
+		name = "GFX_GER_oath_to_the_supreme_commander"
+		texturefile = "gfx/interface/goals/oath_to_the_supreme_commander.dds"
+	}
+	##Icon For: 
+	SpriteType = { 
+		name = "GFX_GER_tamed_war_dogs"
+		texturefile = "gfx/interface/goals/tamed_war_dogs.dds"
+	}
+	##Icon For: 
+	SpriteType = { 
+		name = "GFX_GER_integrate_the_freikorps_into_the_state"
+		texturefile = "gfx/interface/goals/integrate_the_freikorps_into_the_state.dds"
+	}
+	##Icon For: 
+	SpriteType = { 
+		name = "GFX_GER_but_they_reform...."
+		texturefile = "gfx/interface/goals/but_they_reform....dds"
+	}
+	##Icon For: 
+	SpriteType = { 
+		name = "GFX_GER_stabbed_in_the_back"
+		texturefile = "gfx/interface/goals/stapped_in_the_back.dds"
+	}
+	##Icon For: 
+	SpriteType = { 
+		name = "GFX_GER_force_Hugenberg_to_take_a_vacation"
+		texturefile = "gfx/interface/goals/force_hugemberg_to_take_a_vacation.dds"
+	}
+	##Icon For: 
+	SpriteType = { 
+		name = "GFX_GER_keep_an_eye_on_the_reformers"
+		texturefile = "gfx/interface/goals/keep_on_eye_on_the_reformist.dds"
+	}
+	##Icon For: 
+	SpriteType = { 
+		name = "GFX_GER_centralize_decision_making"
+		texturefile = "gfx/interface/goals/centralize_decision_making.dds"
+	}
+	##Icon For: 
+	SpriteType = { 
+		name = "GFX_GER_unifying_the_national_narrative"
+		texturefile = "gfx/interface/goals/Unifyng_the_national_narrative.dds"
+	}
+	SpriteType = { 
+		name = "GFX_GER_purging_of_comunist_elements"
+		texturefile = "gfx/interface/goals/prugin_unfair_elements.dds"
+	}
+	##Icon For: 
+	SpriteType = { 
+		name = "GFX_GER_identification_of_antinational_elements"
+		texturefile = "gfx/interface/goals/identification_of_anti-national_elements.dds"
+	}
+	##Icon For: 
+	SpriteType = { 
+		name = "GFX_GER_emergency_courts"
+		texturefile = "gfx/interface/goals/emergency_courts.dds"
+	}
+	##Icon For: 
+	SpriteType = { 
+		name = "GFX_GER_the_enemy_lives_among_us"
+		texturefile = "gfx/interface/goals/the_enemy_lives_amog_us.dds"
+	}
+	##Icon For: 
+	SpriteType = { 
+		name = "GFX_GER_the_nation_does_not_forget"
+		texturefile = "gfx/interface/goals/the_nation_does_not_forget.dds"
+	}
+	##Icon For: 
+	SpriteType = { 
+		name = "GFX_GER_everything_with_the_state_nothing_agaist_the_state"
+		texturefile = "gfx/interface/goals/everything_with_the_state_nothing_agaist_the_state.dds"
+	}
 
 }

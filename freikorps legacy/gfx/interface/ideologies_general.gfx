@@ -1,0 +1,7 @@
+spriteTypes = {
+    spriteType = {
+        name = "GFX_ortodox_reactionary"
+        texturefile = "gfx/interface/ideologis_pictures/GER_ortodox_reactionary.png"
+        legacy_lazy_load = no
+    }
+}

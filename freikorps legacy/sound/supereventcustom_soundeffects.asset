@@ -1,0 +1,11 @@
+soundeffect = {
+	name = se_04
+	loop = no
+	sounds = {
+		sound = se_04
+		}
+	is3d = no # НЕ ЧІПАЙ
+	max_audible = 1 # НЕ ЧІПАЙ
+	max_audible_behaviour = fail # також НЕ ЧІПАЙ
+	volume = 4.5
+}

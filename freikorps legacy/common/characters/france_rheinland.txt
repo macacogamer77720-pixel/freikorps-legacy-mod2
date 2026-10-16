@@ -1,0 +1,16 @@
+characters = {
+	#Francois Darlan
+	france_rheinland_Francois_Darlan = {
+		name = france_rheinland_Francois_Darlan
+		portraits = {
+			civilian = {
+				large = GFX_france_rheinland_Francois_Darlan_large
+			}
+		}
+		country_leader = {
+			ideology = despotism  
+			traits = { War_Industrialist }
+			expire = ""
+		}
+	}
+}

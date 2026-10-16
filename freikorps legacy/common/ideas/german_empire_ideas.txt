@@ -257,7 +257,7 @@ army_core_defence_factor = 0.10
 
 conscription_factor = 0.15
 
-stability_factor = 0.10
+stability_factor = -0.05
 
 no_compliance_gain = 3.5
 
@@ -304,7 +304,7 @@ army_core_defence_factor = 0.10
 
 conscription_factor = 0.10
 
-stability_factor = 0.20
+stability_factor = 0.15
 
 offence = -0.10
 
@@ -313,30 +313,61 @@ production_factory_efficiency_gain_factor = 0.25
 			}
 	   }
 
-	   reformed_freikorps2 = {
+	   identification_of_antinational_elements = {
 			picture = almost_no_international_support-2039
 			allowed = {
 				tag = GER
 			}
 			modifier = {
 				
-political_power_factor = -0.15
-				
-army_core_attack_factor = 0.15
+add_war_support = 0.15
 
-army_core_defence_factor = 0.15
-
-conscription_factor = 0.20
-
-stability_factor = -0.10
-
-no_compliance_gain = 15
-
-offence = 0.15
+neutrality_drift = 0.03          
 
 			}
 	   }
-	   
+	   identification_of_antinational_elements2 = {
+			picture = almost_no_international_support-2039
+			allowed = {
+				tag = GER
+			}
+			modifier = {
+				
+add_war_support = 0.15
+
+stability_factor = 0.05
+
+neutrality_drift = 0.03
+
+communism_drift = -0.03 
+
+			}
+	   }
+
+           emergency_courts = {
+			picture = almost_no_international_support-2039
+			allowed = {
+				tag = GER
+			}
+			modifier = {
+				
+justify_war_goal_time = -0.5   
+              
+compliance_growth = 0.10         
+
+			}
+	   }
+           reformed_freikorps2 = {
+			picture = almost_no_international_support-2039
+			allowed = {
+				tag = GER
+			}
+			modifier = {
+				
+
+			}
+	   }
+ 
 	   Freikorps_incorporate_into_the_state = {
 			picture = almost_no_international_support-2039
 			allowed = {

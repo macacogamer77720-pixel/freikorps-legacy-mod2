@@ -1,0 +1,26 @@
+scripted_gui = {	#Ваш супер івент | Your super event#
+
+	super_event_custom_window = { 
+		context_type = player_context
+		window_name = "super_event_custom_window" #Назва повинна збігатись як і в 3-й строчці коду#
+
+		visible = {
+			has_country_flag = superevent_has_began #Він викликає появу вашого супер івенту, змінюйте саму назву після "="#
+		}
+	}
+
+	superevent_frame_se_custom = { #НАДЗВИЧАЙНО ВАЖЛИВО ЩОБ ВОНО ЗБІГАЛОСЬ ІЗ ТВОЇМ СУПЕР ІВЕНТОМ В (назва).gui#
+		context_type = player_context
+		window_name = "superevent_frame_se_custom" #Назва повинна збігатись як і в 12-й строчці коду#
+
+		visible = {
+			has_country_flag = superevent_has_began #Переконайся що назви збігаються#
+		}
+
+		effects = {
+			Option_click = {
+				clr_country_flag = superevent_has_began #прибирає твій супер івент, перервірь чи збігається його назва#
+			}
+		}
+	}
+}
